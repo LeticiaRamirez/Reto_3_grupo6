@@ -14,57 +14,49 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Mensaje implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private Integer costume;
-    private String text;
+    private Integer idMessage;
+    private String messageText;
 
     @ManyToOne
-    @JoinColumn(name="disfraz_id")
-    @JsonIgnoreProperties({"message","reservation"}) //verificar nombre de las tablas
-    private Disfraz disfraz;
+    @JoinColumn(name="message_costume")
+    @JsonIgnoreProperties({"message","costume"}) 
+    private Disfraz costume;
 
     @ManyToOne
-    @JoinColumn(name="cliente_id")
-    @JsonIgnoreProperties({"message","client"}) //verificar nombre de las tablas
-    private Cliente cliente;
+    @JoinColumn(name="message_client")
+    @JsonIgnoreProperties({"message","client"})
+    private Cliente client;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdMessage() {
+        return idMessage;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdMessage(Integer idMessage) {
+        this.idMessage = idMessage;
     }
 
-    public Integer getCostume() {
+    public String getMessageText() {
+        return messageText;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
+    }
+
+    public Disfraz getDisfraces() {
         return costume;
     }
 
-    public void setCostume(Integer costume) {
+    public void setDisfraces(Disfraz costume) { 
         this.costume = costume;
     }
 
-    public String getText() {
-        return text;
+    public Cliente getClientes() {
+        return client;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setClientes(Cliente client) { 
+        this.client = client;
     }
 
-    public Disfraz getDisfraz() { 
-        return disfraz;
-    }
-
-    public void setDisfraz(Disfraz disfraz) { 
-        this.disfraz = disfraz;
-    }
-
-    public Cliente getCliente() { 
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) { 
-        this.cliente = cliente;
-    }
 }

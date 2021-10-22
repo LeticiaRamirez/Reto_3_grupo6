@@ -29,13 +29,13 @@ public class MensajeServicios {
     }
 
     /**
-     * Creear una mensaje
+     * Crear una mensaje
      */
     public Mensaje save(Mensaje mensaje){
-        if(mensaje.getId()==null){
+        if(mensaje.getIdMessage()==null){
             return mensajeRepositorio.save(mensaje);
         }else{
-            Optional<Mensaje> paux=mensajeRepositorio.getMensaje(mensaje.getId());
+            Optional<Mensaje> paux=mensajeRepositorio.getMensaje(mensaje.getIdMessage());
             if(paux.isEmpty()){
                 return mensajeRepositorio.save(mensaje);
             }else{
@@ -48,11 +48,11 @@ public class MensajeServicios {
      * Actualizar una Mensaje
      */
     public Mensaje update(Mensaje mensaje){
-        if(mensaje.getId()!=null){
-            Optional<Mensaje>g=mensajeRepositorio.getMensaje(mensaje.getId());
+        if(mensaje.getIdMessage()!=null){
+            Optional<Mensaje>g=mensajeRepositorio.getMensaje(mensaje.getIdMessage());
             if(!g.isEmpty()){
-                if(mensaje.getText()!=null){
-                    g.get().setText(mensaje.getText());
+                if(mensaje.getMessageText()!=null){
+                    g.get().setMessageText(mensaje.getMessageText());
                 }
                 return mensajeRepositorio.save(g.get());
             }
