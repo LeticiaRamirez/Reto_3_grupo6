@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 
 @Entity
-@Table(name = "custome")
+@Table(name = "costume")
 
 public class Disfraz implements Serializable {
     @Id
@@ -34,15 +34,15 @@ public class Disfraz implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("custome")
+    @JsonIgnoreProperties("costumes")
     private Categoria category;
 
-    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "custome")
-    @JsonIgnoreProperties({ "custome", "client" })
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "costume")
+    @JsonIgnoreProperties({ "costume", "client" })
     private List<Mensaje> messages;
 
-    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "custome")
-    @JsonIgnoreProperties({ "custome", "client" })
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "costume")
+    @JsonIgnoreProperties({ "costume", "client" })
     private List<Reserva> reservations;
 
     public Integer getId() {
@@ -83,5 +83,29 @@ public class Disfraz implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Categoria getCategory() {
+        return category;
+    }
+
+    public void setCategory(Categoria category) {
+        this.category = category;
+    }
+
+    public List<Mensaje> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Mensaje> messages) {
+        this.messages = messages;
+    }
+
+    public List<Reserva> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reserva> reservations) {
+        this.reservations = reservations;
     }
 }

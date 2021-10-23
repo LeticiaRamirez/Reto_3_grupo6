@@ -47,6 +47,7 @@ public class ReservaControlador {
     public Reserva update(@RequestBody Reserva reserva) {
         return reservaServicios.update(reserva);
     }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int reservationId) {

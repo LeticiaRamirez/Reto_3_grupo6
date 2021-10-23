@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "Client")
+@Table(name = "client")
 public class Cliente implements Serializable {
 
     @Id
@@ -27,12 +27,12 @@ public class Cliente implements Serializable {
     private String name;
     private Integer age;
 
-    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "Client")
-    @JsonIgnoreProperties("Client")
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "client")
+    @JsonIgnoreProperties("client")
     public List<Mensaje> messages;
 
-    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "Client")
-    @JsonIgnoreProperties("Client")
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "client")
+    @JsonIgnoreProperties("client")
     public List<Reserva> reservations;
 
     public Integer getIdClient() {

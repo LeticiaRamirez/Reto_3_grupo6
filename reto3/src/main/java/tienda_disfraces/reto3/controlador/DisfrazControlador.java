@@ -21,40 +21,40 @@ import tienda_disfraces.reto3.modelo.Disfraz;
 import tienda_disfraces.reto3.servicios.DisfrazServicios;
 
 @RestController
-@RequestMapping("/api/custome")
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class DisfrazControlador{
+@RequestMapping("/api/Costume")
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+        RequestMethod.DELETE })
+public class DisfrazControlador {
 
     @Autowired
     private DisfrazServicios disfrazServicios;
 
     @GetMapping("/all")
-    public List<Disfraz> getDisfraz(){
+    public List<Disfraz> getDisfraz() {
         return disfrazServicios.getAll();
     }
+
     @GetMapping("/{id}")
-    public Optional<Disfraz> getDisfraz(@PathVariable("id") int id){
+    public Optional<Disfraz> getDisfraz(@PathVariable("id") int id) {
         return disfrazServicios.getDisfraz(id);
     }
 
-
-
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Disfraz save(@RequestBody Disfraz disfraz){
+    public Disfraz save(@RequestBody Disfraz disfraz) {
         return disfrazServicios.save(disfraz);
     }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Disfraz update(@RequestBody Disfraz disfraz){
+    public Disfraz update(@RequestBody Disfraz disfraz) {
         return disfrazServicios.update(disfraz);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean deletePapeleria(@PathVariable("id") int id){
+    public boolean deletePapeleria(@PathVariable("id") int id) {
         return disfrazServicios.deleteDisfraz(id);
     }
-    
+
 }

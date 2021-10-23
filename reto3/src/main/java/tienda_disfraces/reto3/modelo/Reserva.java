@@ -5,9 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.Date;
 
-
-
-
 @Entity
 @Table(name = "reservation")
 public class Reserva implements Serializable {
@@ -21,12 +18,12 @@ public class Reserva implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id")
-    @JsonIgnoreProperties("reservation")
-    private Disfraz disfraz;
+    @JsonIgnoreProperties("reservations")
+    private Disfraz costume;
 
     @ManyToOne
     @JoinColumn(name = "idCliente")
-    @JsonIgnoreProperties({ "reservation", "message" })
+    @JsonIgnoreProperties({ "reservations", "messages" })
     private Cliente client;
 
     private String score;
@@ -62,13 +59,13 @@ public class Reserva implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
     public Disfraz getDisfraz() {
-        return disfraz;
+        return costume;
     }
 
-    public void setFarm(Disfraz disfraz) {
-        this.disfraz = disfraz;
+    public void setDisfraz(Disfraz costume) {
+        this.costume = costume;
     }
 
     public Cliente getClient() {
