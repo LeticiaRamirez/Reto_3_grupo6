@@ -1,5 +1,7 @@
 package tienda_disfraces.reto3.repositorio.Crud;
 
-public class ReservaCrudRepositorio {
-    
+import org.springframework.data.repository.CrudRepository;
+import tienda_disfraces.reto3.modelo.Reserva;
+
+public interface ReservaCrudRepositorio extends CrudRepository<Reserva, Integer> {
 }

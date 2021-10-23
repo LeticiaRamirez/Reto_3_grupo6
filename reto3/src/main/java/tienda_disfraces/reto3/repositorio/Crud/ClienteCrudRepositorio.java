@@ -7,3 +7,4 @@ import tienda_disfraces.reto3.modelo.Cliente;
 public interface ClienteCrudRepositorio extends CrudRepository<Cliente, Integer> {
 
 }
+
