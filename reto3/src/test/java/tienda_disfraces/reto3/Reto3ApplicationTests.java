@@ -1,13 +1,13 @@
-package tienda_disfraces.reto3;
+// package tienda_disfraces.reto3;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class Reto3ApplicationTests {
+// @SpringBootTest
+// class Reto3ApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// @Test
+// void contextLoads() {
+// }
 
-}
+// }
