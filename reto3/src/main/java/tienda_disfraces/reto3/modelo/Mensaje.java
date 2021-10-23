@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * @autor Gladys Leticia Ramirez Torres
+ *
  */
 @Entity
 @Table(name = "message")
@@ -18,13 +19,13 @@ public class Mensaje implements Serializable {
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name="message_costume")
-    @JsonIgnoreProperties({"message","costume"}) 
+    @JoinColumn(name = "message_costume")
+    @JsonIgnoreProperties({ "message", "costume" })
     private Disfraz costume;
 
     @ManyToOne
-    @JoinColumn(name="message_client")
-    @JsonIgnoreProperties({"message","client"})
+    @JoinColumn(name = "message_client")
+    @JsonIgnoreProperties({ "message", "client" })
     private Cliente client;
 
     public Integer getIdMessage() {
@@ -47,7 +48,7 @@ public class Mensaje implements Serializable {
         return costume;
     }
 
-    public void setDisfraces(Disfraz costume) { 
+    public void setDisfraces(Disfraz costume) {
         this.costume = costume;
     }
 
@@ -55,7 +56,7 @@ public class Mensaje implements Serializable {
         return client;
     }
 
-    public void setClientes(Cliente client) { 
+    public void setClientes(Cliente client) {
         this.client = client;
     }
 
