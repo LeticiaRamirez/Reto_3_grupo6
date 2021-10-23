@@ -1,10 +1,18 @@
 package tienda_disfraces.reto3.modelo;
 import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * @author GRUPO 6
@@ -22,6 +30,20 @@ public class Disfraz implements Serializable {
     private String brand;
     private Integer year;
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name ="categoryId")
+    @JsonIgnoreProperties("custome")
+    private Categoria category;
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "custome")
+    @JsonIgnoreProperties({"custome", "client"})
+    private List<Mensaje> messages;
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "custome")
+    @JsonIgnoreProperties({"custome", "client"})
+    private List<Reserva> reservations;
+
 
     public Integer getId() {
         return id;
