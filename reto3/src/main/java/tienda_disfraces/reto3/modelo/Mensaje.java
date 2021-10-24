@@ -19,13 +19,13 @@ public class Mensaje implements Serializable {
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name = "id")
-    @JsonIgnoreProperties({ "message", "costume", "reservations" })
+    @JoinColumn(name = "costumeid")
+    @JsonIgnoreProperties({ "messages", "reservations" })
     private Disfraz costume;
 
     @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties({ "messages", "reservations", "client" })
+    @JsonIgnoreProperties({ "messages", "reservations" })
     private Cliente client;
 
     public Integer getIdMessage() {
@@ -44,20 +44,54 @@ public class Mensaje implements Serializable {
         this.messageText = messageText;
     }
 
-    public Disfraz getDisfraces() {
+    public Disfraz getCostume() {
         return costume;
     }
 
-    public void setDisfraces(Disfraz costume) {
+    public void setCostume(Disfraz costume) {
         this.costume = costume;
     }
 
-    public Cliente getClientes() {
+    public Cliente getClient() {
         return client;
     }
 
-    public void setClientes(Cliente client) {
+    public void setClient(Cliente client) {
         this.client = client;
     }
+
+    
+
+    // public Integer getIdMessage() {
+    //     return idMessage;
+    // }
+
+    // public void setIdMessage(Integer idMessage) {
+    //     this.idMessage = idMessage;
+    // }
+
+    // public String getMessageText() {
+    //     return messageText;
+    // }
+
+    // public void setMessageText(String messageText) {
+    //     this.messageText = messageText;
+    // }
+
+    // public Disfraz getDisfraces() {
+    //     return costume;
+    // }
+
+    // public void setDisfraces(Disfraz costume) {
+    //     this.costume = costume;
+    // }
+
+    // public Cliente getClientes() {
+    //     return client;
+    // }
+
+    // public void setClientes(Cliente client) {
+    //     this.client = client;
+    // }
 
 }
