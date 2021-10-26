@@ -60,38 +60,4 @@ public class Mensaje implements Serializable {
         this.client = client;
     }
 
-    
-
-    // public Integer getIdMessage() {
-    //     return idMessage;
-    // }
-
-    // public void setIdMessage(Integer idMessage) {
-    //     this.idMessage = idMessage;
-    // }
-
-    // public String getMessageText() {
-    //     return messageText;
-    // }
-
-    // public void setMessageText(String messageText) {
-    //     this.messageText = messageText;
-    // }
-
-    // public Disfraz getDisfraces() {
-    //     return costume;
-    // }
-
-    // public void setDisfraces(Disfraz costume) {
-    //     this.costume = costume;
-    // }
-
-    // public Cliente getClientes() {
-    //     return client;
-    // }
-
-    // public void setClientes(Cliente client) {
-    //     this.client = client;
-    // }
-
 }

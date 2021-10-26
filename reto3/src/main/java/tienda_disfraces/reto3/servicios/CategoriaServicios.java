@@ -54,6 +54,9 @@ public class CategoriaServicios {
                 if(categoria.getName()!=null){
                     g.get().setName(categoria.getName());
                 }
+                if(categoria.getDescription()!=null){
+                    g.get().setDescription(categoria.getDescription());
+                }
                 return categoriaRepositorio.save(g.get());
             }
         }
